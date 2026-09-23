@@ -1,5 +1,7 @@
 # 🛣️ Preis der Anarchie & Braess-Paradox – warum eine zusätzliche Straße alle langsamer machen kann
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-poa-braess-demo.streamlit.app/)**
+
 Zweites Stück der **Spieltheorie-&-Mechanism-Design-Linie** der "Konzepte"-Reihe im Portfolio von
 [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning. Nachfolger von
 [nash-demo](https://sebastianhanisch-nash-demo.streamlit.app/): dort ging es darum, ob Best-Response ein Gleichgewicht findet und wie viele
