@@ -56,6 +56,17 @@ alle Lkw sie - und alle brauchen länger als vorher. Diese Demo zeigt beides: an
 aus der Vorgänger-Demo.
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/braess-paradox-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Wenn jeder Lkw für sich den schnellsten Weg wählt, entsteht ein Gleichgewicht, in dem kein einzelner mehr wechseln will. Gut für alle ist es nicht unbedingt. Der **Preis der Anarchie** misst, um wie viel schlechter das schlechteste Gleichgewicht ist als die beste denkbare Zuordnung. Das **Braess-Paradox** ist der Extremfall: Öffnet man in einem kleinen Straßennetz eine zusätzliche Abkürzung, wählen alle Lkw sie, und alle brauchen länger als vorher. Die Demo zählt alle Gleichgewichte exakt auf, zeigt, bei welcher Länge der Umwege die Abkürzung schadet, und vergleicht Zufallsnetze mit Netzen von Braess-Bauart. Es ist ein kleines Modell, und Eigennutz ist darin eine Annahme, kein Befund über echte Terminals.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/braess-paradox-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Zweites Stück der Linie \"Spieltheorie & Mechanism Design\" der \"Konzepte\"-Reihe, Nachfolger von **nash-demo**: dort ging es darum, ob Best-Response ein Gleichgewicht "
     "findet und wie viele es gibt - hier darum, wie gut oder schlecht es ist. Eigennutz ist dabei eine Modellannahme, kein Befund über echte Terminals."
@@ -281,6 +292,28 @@ st.caption(
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/braess-paradox-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind $n$ gleiche Lkw, das Braess-Netz mit den Fahrzeitparametern $b$, $c$ und $e$ und die Wahl, die Abkürzung zu öffnen oder zu sperren. Gesucht sind die Gleichgewichte $NE$, die Summe der Fahrzeiten $SC(s)$ und der Preis der Anarchie $\mathrm{PoA}$.
+
+| Symbol | Bedeutung |
+|---|---|
+| $a_e$, $b_e$ | feste und lastabhängige Fahrzeit der Kante $e$ (Fahrzeit $a_e + b_e x_e$) |
+| $x_e$ | Zahl der Lkw auf der Kante $e$ |
+| $b$ | Minuten je Lkw auf den lastabhängigen Kanten $sA$ und $Bt$ |
+| $c$ | feste Fahrzeit der Umwege $At$ und $sB$ |
+| $e$ | feste Fahrzeit der Abkürzung $AB$ (als Index: eine Kante) |
+| $n$ | Zahl der Lkw |
+| $P_1$, $P_2$, $P_3$ | Weg über $A$, Weg über $B$, Weg über die Abkürzung |
+| $s$, $NE$ | Zustand (Zahl der Lkw je Weg), Menge der Gleichgewichte |
+| $c_i(s)$, $SC(s)$ | Fahrzeit des Lkw $i$ im Zustand $s$, Summe der Fahrzeiten aller Lkw |
+| $\mathrm{PoA}$ | Preis der Anarchie: schlechtestes Gleichgewicht geteilt durch Optimum |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/braess-paradox-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Braess-Netz.** Kanten $e \in \{sA, At, sB, Bt, AB\}$ mit Fahrzeit $a_e + b_e x_e$, $x_e$ = Zahl der Lkw auf der Kante. Wege $P_1 = (sA, At)$, $P_2 = (sB, Bt)$, $P_3 = (sA, AB, Bt)$.
